@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/address")
+@RequestMapping(value = "/address")
 public class AddressController {
     
 
@@ -31,7 +31,7 @@ public class AddressController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity getAddressByUserId(@RequestParam String param){
+    public ResponseEntity getAddressByUserId(@PathVariable final String id){
         return new ResponseEntity<>("User ID Address", HttpStatus.OK);
     }
 
